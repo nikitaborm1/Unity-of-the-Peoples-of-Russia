@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Платформа Единство народов России - сохранение культурного наследия.">
+    <title>Единство народов России | Платформа</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Перейти к основному содержимому</a>
+
+    <!-- Закрепленные соцсети (Справа) -->
+    <aside class="fixed-socials" aria-label="Социальные сети">
+        <a href="#" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.6 13.9h-1.8c-.6 0-.8-.5-1.4-1-.7-.7-1.1-.8-1.3-.8-.2 0-.3.1-.3.5v1.1c0 .3-.2.5-.6.5-1 0-2.1-.6-2.9-1.7-1.1-1.5-1.8-3.5-1.8-4.1 0-.3.1-.5.4-.5h1.8c.3 0 .4.2.5.4.3 1.1 1 2.2 1.6 2.6.2.1.3.1.4 0 .1-.2.3-.7.4-1.2.1-.3.2-.6.2-.7 0-.2-.1-.3-.2-.3h-1.4c-.2 0-.3-.1-.3-.3 0-.3.2-.8.7-1.3.6-.6 1.4-.9 2.3-.9.6 0 1.1.1 1.5.1.3 0 .5.2.5.5v2.9c0 .2.1.2.2.2.1 0 .2 0 .3-.1.4-.4.9-1.1 1.3-1.9.2-.3.3-.5.6-.5h1.7c.3 0 .4.2.4.5 0 .3-.2.9-.6 1.6-.5.8-1.2 1.7-1.4 2-.1.2-.1.3 0 .5.2.3.8 1 1.1 1.4.3.4.5.7.5.9 0 .2-.1.4-.3.4z"/></svg></a>
+        <a href="#" aria-label="Одноклассники"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 13c-2.33 0-4.31-1.46-5.11-3.5h10.22c-.8 2.04-2.78 3.5-5.11 3.5z"/></svg></a>
+        <a href="#" aria-label="Макс"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg></a>
+    </aside>
+
+    <!-- Шапка (Sticky) -->
+    <header class="sticky-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <img src="https://via.placeholder.com/200x50/FFFFFF/333333?text=ГОД+ЕДИНСТВА" alt="Логотип Год единства народов России">
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Открыть меню" aria-expanded="false" id="menuBtn">☰</button>
+
+            <nav class="main-nav" id="mainNav" aria-label="Главное меню">
+                <a href="#hero">Главная</a>
+                <a href="#directions">Направления</a>
+                <a href="#events">Мероприятия</a>
+                <a href="#gallery">Галерея</a>
+            </nav>
+
+            <div class="header-contacts">
+                <a href="tel:+79991234567" class="phone">+7 (999) 123-45-67</a>
+                <button class="btn btn-primary" onclick="openModal('regModal')">Регистрация</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- 1 Экран: Баннер -->
+        <section class="hero" id="hero">
+            <div class="container hero-content">
+                <h1>Россия — это мы: Единство в многообразии культур</h1>
+                <p>Интерактивная платформа для сохранения и популяризации культурного наследия народов Российской Федерации.</p>
+                <button class="btn btn-primary btn-lg" onclick="openModal('videoModal')">О проекте</button>
+            </div>
+        </section>
+
+        <!-- 2 Экран: Направления -->
+        <section class="directions section-padding" id="directions">
+            <div class="container">
+                <h2>Наши направления</h2>
+                <div class="grid-4">
+                    <article class="card">
+                        <img src="https://via.placeholder.com/300x200/513bb7/FFFFFF?text=Туризм" alt="Этнографический туризм">
+                        <h3>Этнографический туризм</h3>
+                        <p>Маршруты по местам традиционного проживания народов.</p>
+                        <button class="btn btn-outline" onclick="openModal('dirModal1')">Подробнее</button>
+                    </article>
+                    <article class="card">
+                        <img src="https://via.placeholder.com/300x200/513bb7/FFFFFF?text=Фольклор" alt="Цифровой фольклор">
+                        <h3>Цифровой фольклор</h3>
+                        <p>Оцифровка и сохранение народных песен, сказок и мифов.</p>
+                        <button class="btn btn-outline" onclick="openModal('dirModal2')">Подробнее</button>
+                    </article>
+                    <article class="card">
+                        <img src="https://via.placeholder.com/300x200/513bb7/FFFFFF?text=Ремесла" alt="Ремесленные хабы">
+                        <h3>Ремесленные хабы</h3>
+                        <p>Прямая поддержка мастеров народных художественных промыслов.</p>
+                        <button class="btn btn-outline" onclick="openModal('dirModal3')">Подробнее</button>
+                    </article>
+                    <article class="card">
+                        <img src="https://via.placeholder.com/300x200/513bb7/FFFFFF?text=Языки" alt="Языковой мост">
+                        <h3>Языковой мост</h3>
+                        <p>Курсы и разговорные клубы для изучения редких языков России.</p>
+                        <button class="btn btn-outline" onclick="openModal('dirModal4')">Подробнее</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3 Экран: Мероприятия -->
+        <section class="events section-padding" id="events">
+            <div class="container">
+                <h2>Ближайшие мероприятия</h2>
+                <div class="grid-2">
+                    <article class="event-card">
+                        <h3>Всероссийский этнокультурный форум «Содружество»</h3>
+                        <p>📅 12 августа 2026 г.</p>
+                        <p>📍 Казань, Казанский Кремль</p>
+                        <button class="btn btn-primary" onclick="openModal('regModal')">Принять участие</button>
+                    </article>
+                    <article class="event-card">
+                        <h3>Выставка-ярмарка «Сокровища Севера»</h3>
+                        <p>📅 05 сентября 2026 г.</p>
+                        <p>📍 Якутск, Этнографический центр</p>
+                        <button class="btn btn-primary" onclick="openModal('regModal')">Принять участие</button>
+                    </article>
+                </div>
+                
+                <!-- Карта -->
+                <h3 style="margin-top: 40px; text-align: center;">Карта мероприятий</h3>
+                <div class="map-container">
+                    <!-- Пример встраивания Яндекс.Карты -->
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1a2b3c4d5e6f7g8h9i0j&source=constructor" width="100%" height="400" frameborder="0" title="Карта мероприятий"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4 Экран: Галерея -->
+        <section class="gallery section-padding" id="gallery">
+            <div class="container">
+                <h2>Прошедшие мероприятия</h2>
+                <div class="slider-container">
+                    <div class="slider" id="slider">
+                        <div class="slide"><img src="https://via.placeholder.com/1200x500/333333/FFFFFF?text=Фестиваль+Культур" alt="Событие 1"></div>
+                        <div class="slide"><img src="https://via.placeholder.com/1200x500/333333/FFFFFF?text=Выставка+Ремесел" alt="Событие 2"></div>
+                        <div class="slide"><img src="https://via.placeholder.com/1200x500/333333/FFFFFF?text=Концерт+Народной+Музыки" alt="Событие 3"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container footer-inner">
+            <div class="footer-logo">
+                <img src="https://via.placeholder.com/150x40/FFFFFF/333333?text=Логотип" alt="Логотип">
+                <p>© Иванов Иван, 2026</p>
+            </div>
+            <nav class="footer-nav" aria-label="Навигация в подвале">
+                <a href="#hero">Наверх</a>
+                <a href="#directions">Направления</a>
+                <a href="#events">Мероприятия</a>
+            </nav>
+            <div class="footer-contacts">
+                <p>+7 (999) 123-45-67</p>
+                <p>info@unity.ru</p>
+            </div>
+        </div>
+        <button class="btn-up" onclick="scrollToTop()" aria-label="Вернуться наверх">↑</button>
+    </footer>
+
+    <!-- Модальные окна -->
+    <!-- 1. Видео -->
+    <div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="videoTitle">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('videoModal')" aria-label="Закрыть окно">&times;</button>
+            <h3 id="videoTitle">О проекте</h3>
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Направления (Подробнее) -->
+    <div id="dirModal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="dirTitle1">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('dirModal1')" aria-label="Закрыть окно">&times;</button>
+            <h3 id="dirTitle1">Этнографический туризм</h3>
+            <p>Мы разрабатываем уникальные маршруты, которые позволяют погрузиться в быт и традиции коренных народов России. От степей Калмыкии до тундры Ямала — откройте для себя неизведанные уголки нашей необъятной Родины.</p>
+        </div>
+    </div>
+    <div id="dirModal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="dirTitle2">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('dirModal2')" aria-label="Закрыть окно">&times;</button>
+            <h3 id="dirTitle2">Цифровой фольклор</h3>
+            <p>Наша команда оцифровывает древние эпосы, песни и сказания. Мы создаем интерактивные библиотеки, где каждый желающий может не только прочитать, но и услышать живые голоса хранителей традиций.</p>
+        </div>
+    </div>
+    <div id="dirModal3" class="modal" role="dialog" aria-modal="true" aria-labelledby="dirTitle3">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('dirModal3')" aria-label="Закрыть окно">&times;</button>
+            <h3 id="dirTitle3">Ремесленные хабы</h3>
+            <p>Мы объединяем мастеров гончарного дела, ткачества, резьбы по дереву и кости. Платформа помогает им находить учеников, обмениваться опытом и реализовывать свои изделия не только в России, но и за рубежом.</p>
+        </div>
+    </div>
+    <div id="dirModal4" class="modal" role="dialog" aria-modal="true" aria-labelledby="dirTitle4">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('dirModal4')" aria-label="Закрыть окно">&times;</button>
+            <h3 id="dirTitle4">Языковой мост</h3>
+            <p>Изучайте языки народов России с носителями. Наши онлайн-клубы и курсы помогут вам не только освоить лексику, но и понять культурный код и менталитет этносов.</p>
+        </div>
+    </div>
+
+    <!-- 3. Форма регистрации -->
+    <div id="regModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="regTitle">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('regModal')" aria-label="Закрыть окно">&times;</button>
+            <h3 id="regTitle">Регистрация на мероприятие</h3>
+            <form id="regForm" onsubmit="return validateForm(event)" novalidate>
+                <div class="form-group">
+                    <label for="fio">ФИО:</label>
+                    <input type="text" id="fio" name="fio" required pattern="^[A-Za-zА-Яа-яЁё\s\-]+$" title="Только буквы, пробелы и дефисы" placeholder="Иванов Иван Иванович">
+                    <span class="error-msg" id="fioError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dob">Дата рождения:</label>
+                    <input type="date" id="dob" name="dob" required>
+                    <span class="error-msg" id="dobError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Почтовый адрес:</label>
+                    <input type="text" id="address" name="address" required placeholder="г. Москва, ул. Ленина, д. 1">
+                    <span class="error-msg" id="addressError"></span>
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                    <button type="button" class="btn btn-outline" onclick="closeModal('regModal')">Отменить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
