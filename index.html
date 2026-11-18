@@ -9,6 +9,52 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- === Галерея прошедших мероприятий: 3 фото вместо одного огромного === -->
+    <style>
+        .gallery .slide-photos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .gallery .slide-photos figure {
+            margin: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #eee;
+        }
+
+        .gallery .slide-photos img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            transition: transform .35s ease;
+        }
+
+        .gallery .slide-photos figure:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery .slide-caption {
+            margin: 12px 0 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .gallery .slide-photos { gap: 8px; }
+            .gallery .slide-photos figure { border-radius: 8px; }
+        }
+
+        @media (max-width: 480px) {
+            .gallery .slide-photos { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Перейти к основному содержимому</a>
@@ -120,9 +166,55 @@
                 <h2>Прошедшие мероприятия</h2>
                 <div class="slider-container">
                     <div class="slider" id="slider">
-                        <div class="slide"><img src="https://lgz.ru/upload/articles/5f7/eyleswoyt9wzkf1koiw69sqmy3gdqtds.JPG" alt="Событие 1"></div>
-                        <div class="slide"><img src="https://via.placeholder.com/1200x500/333333/FFFFFF?text=Выставка+Ремесел" alt="Событие 2"></div>
-                        <div class="slide"><img src="https://via.placeholder.com/1200x500/333333/FFFFFF?text=Концерт+Народной+Музыки" alt="Событие 3"></div>
+
+                        <!-- Мероприятие 1 — 3 фото -->
+                        <div class="slide">
+                            <div class="slide-photos">
+                                <figure>
+                                    <img src="https://via.placeholder.com/600x450/513bb7/FFFFFF?text=Форум+2025+—+фото+1" alt="Форум «Содружество» 2025 — фото 1" loading="lazy">
+                                </figure>
+                                <figure>
+                                    <img src="https://via.placeholder.com/600x450/6a4fd8/FFFFFF?text=Форум+2025+—+фото+2" alt="Форум «Содружество» 2025 — фото 2" loading="lazy">
+                                </figure>
+                                <figure>
+                                    <img src="https://via.placeholder.com/600x450/8b6cf0/FFFFFF?text=Форум+2025+—+фото+3" alt="Форум «Содружество» 2025 — фото 3" loading="lazy">
+                                </figure>
+                            </div>
+                            <p class="slide-caption">Всероссийский этнокультурный форум «Содружество» — 2025</p>
+                        </div>
+
+                        <!-- Мероприятие 2 — 3 фото -->
+                        <div class="slide">
+                            <div class="slide-photos">
+                                <figure>
+                                    <img src="https://via.placeholder.com/600x450/333333/FFFFFF?text=Выставка+Ремесел+—+фото+1" alt="Выставка ремёсел — фото 1" loading="lazy">
+                                </figure>
+                                <figure>
+                                    <img src="https://via.placeholder.com/600x450/4a4a4a/FFFFFF?text=Выставка+Ремесел+—+фото+2" alt="Выставка ремёсел — фото 2" loading="lazy">
+                                </figure>
+                                <figure>
+                                    <img src="https://via.placeholder.com/600x450/666666/FFFFFF?text=Выставка+Ремесел+—+фото+3" alt="Выставка ремёсел — фото 3" loading="lazy">
+                                </figure>
+                            </div>
+                            <p class="slide-caption">Выставка-ярмарка народных ремёсел «Сокровища Севера» — 2025</p>
+                        </div>
+
+                        <!-- Мероприятие 3 — 3 фото -->
+                        <div class="slide">
+                            <div class="slide-photos">
+                                <figure>
+                                    <img src="https://via.placeholder.com/600x450/1f7a5a/FFFFFF?text=Концерт+—+фото+1" alt="Концерт народной музыки — фото 1" loading="lazy">
+                                </figure>
+                                <figure>
+                                    <img src="https://via.placeholder.com/600x450/2e9975/FFFFFF?text=Концерт+—+фото+2" alt="Концерт народной музыки — фото 2" loading="lazy">
+                                </figure>
+                                <figure>
+                                    <img src="https://via.placeholder.com/600x450/45b890/FFFFFF?text=Концерт+—+фото+3" alt="Концерт народной музыки — фото 3" loading="lazy">
+                                </figure>
+                            </div>
+                            <p class="slide-caption">Концерт народной музыки «Голоса России» — 2025</p>
+                        </div>
+
                     </div>
                 </div>
             </div>
