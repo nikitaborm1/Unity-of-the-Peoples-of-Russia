@@ -10,43 +10,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
-    <!-- === Уменьшенная рамка фото в «Прошедших мероприятиях» === -->
+    <!-- === 3 фото в ряд в «Прошедших мероприятиях» === -->
     <style>
         .gallery .slider-container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
-        .gallery .slide {
-            text-align: center;
+        .gallery .slide-photos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
         }
 
-        /* Сильный селектор + !important, чтобы перебить style.css */
-        .gallery .slider-container .slide > img {
-            display: block !important;
-            width: auto !important;
-            max-width: 55% !important;    /* ← главный параметр масштаба */
-            max-height: 320px !important; /* ← ограничение по высоте */
-            height: auto !important;
-            object-fit: contain !important;
-            margin: 0 auto !important;
-            border-radius: 10px;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, .12);
+        .gallery .slide-photos figure {
+            margin: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .10);
+        }
+
+        .gallery .slide-photos img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            transition: transform .35s ease;
+        }
+
+        .gallery .slide-photos figure:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery .slide-photos figcaption {
+            padding: 10px 12px;
+            font-size: .9rem;
+            font-weight: 600;
+            text-align: center;
+            color: #333;
         }
 
         @media (max-width: 768px) {
-            .gallery .slider-container .slide > img {
-                max-width: 80% !important;
-                max-height: 260px !important;
-            }
+            .gallery .slide-photos { grid-template-columns: repeat(2, 1fr); gap: 12px; }
         }
 
         @media (max-width: 480px) {
-            .gallery .slider-container .slide > img {
-                max-width: 90% !important;
-                max-height: 220px !important;
-                border-radius: 8px;
-            }
+            .gallery .slide-photos { grid-template-columns: 1fr; gap: 10px; }
+            .gallery .slide-photos figure { border-radius: 8px; }
         }
     </style>
 </head>
@@ -160,9 +171,22 @@
                 <h2>Прошедшие мероприятия</h2>
                 <div class="slider-container">
                     <div class="slider" id="slider">
-                        <div class="slide"><img src="https://avatars.mds.yandex.net/i?id=851fc815831e6379749d52424849454e_l-5590006-images-thumbs&n=13" alt="Событие 1"></div>
-                        <div class="slide"><img src="https://avatars.mds.yandex.net/i?id=4dec2a3dbb5c65a9a874a632724e8bfb_l-8339189-images-thumbs&n=13" alt="Событие 2"></div>
-                        <div class="slide"><img src="https://avatars.mds.yandex.net/i?id=007963e5dd29dd7907b5ba255f6ef862_l-4568991-images-thumbs&n=13" alt="Событие 3"></div>
+                        <div class="slide">
+                            <div class="slide-photos">
+                                <figure>
+                                    <img src="https://avatars.mds.yandex.net/i?id=851fc815831e6379749d52424849454e_l-5590006-images-thumbs&n=13" alt="Этнокультурный форум «Содружество»" loading="lazy">
+                                    <figcaption>Этнокультурный форум «Содружество»</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="https://avatars.mds.yandex.net/i?id=4dec2a3dbb5c65a9a874a632724e8bfb_l-8339189-images-thumbs&n=13" alt="Выставка-ярмарка «Сокровища Севера»" loading="lazy">
+                                    <figcaption>Выставка-ярмарка «Сокровища Севера»</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="https://avatars.mds.yandex.net/i?id=007963e5dd29dd7907b5ba255f6ef862_l-4568991-images-thumbs&n=13" alt="Концерт народной музыки «Голоса России»" loading="lazy">
+                                    <figcaption>Концерт народной музыки «Голоса России»</figcaption>
+                                </figure>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
