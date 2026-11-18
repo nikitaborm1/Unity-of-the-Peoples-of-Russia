@@ -9,38 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
-    <!-- === Уменьшение рамки фото в «Прошедших мероприятиях» === -->
-    <style>
-        .gallery .slider-container {
-            max-width: 1100px;   /* при желании ещё сузить блок — уменьшите */
-            margin: 0 auto;
-        }
-
-        .gallery .slide {
-            text-align: center;
-        }
-
-        .gallery .slide img {
-            display: block;
-            width: auto;              /* не растягиваем на всю ширину */
-            max-width: 75%;           /* ← главный параметр «масштаба рамки» */
-            max-height: 420px;        /* ограничение по высоте */
-            height: auto;
-            object-fit: contain;      /* фото целиком, без обрезки */
-            margin: 0 auto;           /* по центру */
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
-        }
-
-        @media (max-width: 768px) {
-            .gallery .slide img { max-width: 90%; max-height: 320px; }
-        }
-
-        @media (max-width: 480px) {
-            .gallery .slide img { max-width: 95%; max-height: 260px; border-radius: 8px; }
-        }
-    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Перейти к основному содержимому</a>
@@ -152,7 +120,7 @@
                 <h2>Прошедшие мероприятия</h2>
                 <div class="slider-container">
                     <div class="slider" id="slider">
-                        <div class="slide"><img src="https://canal-tourism.com/upload/iblock/9d6/9d62663ff6f55ec6923a8073e338d58b.jpg" alt="Событие 1"></div>
+                        <div class="slide"><img src="https://www.m24.ru/b/d/nAgWUB67nUJkzJ7jP6WI_pTxmoDt-dvtg32Qhv2YqzbZJC3PU2mcy3ou4cNb8QfTuNGV_CeILNx_SL-4hSMhMXXfqDgJqgjJnSrxUBPiuy9YKH1Ypyom2ybiaByXQz5QEreaOfg=05MDjBU_JE8xtffPi2G1lQ.jpg" alt="Событие 1"></div>
                         <div class="slide"><img src="https://avatars.mds.yandex.net/i?id=4dec2a3dbb5c65a9a874a632724e8bfb_l-8339189-images-thumbs&n=13" alt="Событие 2"></div>
                         <div class="slide"><img src="https://avatars.mds.yandex.net/i?id=007963e5dd29dd7907b5ba255f6ef862_l-4568991-images-thumbs&n=13" alt="Событие 3"></div>
                     </div>
