@@ -9,6 +9,46 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- === Уменьшенная рамка фото в «Прошедших мероприятиях» === -->
+    <style>
+        .gallery .slider-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery .slide {
+            text-align: center;
+        }
+
+        /* Сильный селектор + !important, чтобы перебить style.css */
+        .gallery .slider-container .slide > img {
+            display: block !important;
+            width: auto !important;
+            max-width: 55% !important;    /* ← главный параметр масштаба */
+            max-height: 320px !important; /* ← ограничение по высоте */
+            height: auto !important;
+            object-fit: contain !important;
+            margin: 0 auto !important;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .12);
+        }
+
+        @media (max-width: 768px) {
+            .gallery .slider-container .slide > img {
+                max-width: 80% !important;
+                max-height: 260px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery .slider-container .slide > img {
+                max-width: 90% !important;
+                max-height: 220px !important;
+                border-radius: 8px;
+            }
+        }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Перейти к основному содержимому</a>
@@ -150,7 +190,6 @@
     </footer>
 
     <!-- Модальные окна -->
-    <!-- 1. Видео -->
     <div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="videoTitle">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('videoModal')" aria-label="Закрыть окно">&times;</button>
@@ -161,7 +200,6 @@
         </div>
     </div>
 
-    <!-- 2. Направления (Подробнее) -->
     <div id="dirModal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="dirTitle1">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('dirModal1')" aria-label="Закрыть окно">&times;</button>
@@ -191,7 +229,6 @@
         </div>
     </div>
 
-    <!-- 3. Форма регистрации -->
     <div id="regModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="regTitle">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('regModal')" aria-label="Закрыть окно">&times;</button>
@@ -202,19 +239,16 @@
                     <input type="text" id="fio" name="fio" required pattern="^[A-Za-zА-Яа-яЁё\s\-]+$" title="Только буквы, пробелы и дефисы" placeholder="Иванов Иван Иванович">
                     <span class="error-msg" id="fioError"></span>
                 </div>
-                
                 <div class="form-group">
                     <label for="dob">Дата рождения:</label>
                     <input type="date" id="dob" name="dob" required>
                     <span class="error-msg" id="dobError"></span>
                 </div>
-                
                 <div class="form-group">
                     <label for="address">Почтовый адрес:</label>
                     <input type="text" id="address" name="address" required placeholder="г. Москва, ул. Ленина, д. 1">
                     <span class="error-msg" id="addressError"></span>
                 </div>
-                
                 <div class="form-buttons">
                     <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
                     <button type="button" class="btn btn-outline" onclick="closeModal('regModal')">Отменить</button>
